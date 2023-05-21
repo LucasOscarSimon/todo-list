@@ -4,37 +4,57 @@ import Tarea from './models/tarea';
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
 
 app.use(express.static('public'));
 
 const tareas: Tarea[] = [
-  new Tarea(1, 'Tarea 1', 'Descripción de la tarea 1'),
-  new Tarea(2, 'Tarea 2', 'Descripción de la tarea 2'),
-  new Tarea(3, 'Tarea 3', 'Descripción de la tarea 3'),
+  new Tarea(1, 'Lavar la ropa', 'Mi vieja me pidió que lave la ropa'),
+  new Tarea(2, 'Hacer Café', 'Chequear los ingredientes disponibles para hacer café'),
+  new Tarea(3, 'Ir al trabajo', 'Chequear servicio meteorológico para ver si llueve'),
 ];
 
 app.get('/tareas', (req: Request, res: Response) => {
   res.render('tareas', { tareas: tareas });
 });
 
-app.get('/about', (req: Request, res: Response) => {
-  res.render('about');
+app.post('/tareas/agregar', (req: Request, res: Response) => {
+  const nuevaTarea = req.body.nombreTarea;
+  const descripcion = req.body.descripcionTarea;
+  const id = tareas.length + 1;
+  const tarea = new Tarea(id, nuevaTarea, descripcion);
+  tareas.push(tarea);
+  res.render('tareas', { tareas: tareas });
 });
 
-app.post('/tareas', (req: Request, res: Response) => {
-  res.send('Tarea agregada con éxito');
-});
-
-app.delete('/tareas/:id', (req: Request, res: Response) => {
+app.post('/tareas/borrar/:id', (req: Request, res: Response) => {
   const id = req.params.id;
-  res.send('Tarea eliminada con éxito');
+  const tareaIndex = tareas.findIndex((tarea) => tarea.id.toString() === id);
+  
+  if (tareaIndex !== -1) {
+    tareas.splice(tareaIndex, 1);
+    res.render('tareas', { tareas: tareas });
+  } else {
+    res.status(404).send('Tarea no encontrada');
+  }  
 });
 
-app.put('/tareas/:id', (req: Request, res: Response) => {
-  res.send('Tarea actualizada con éxito');
+app.post('/tareas/actualizar/:id', (req: Request, res: Response) => {
+  const id = req.params.id;
+  const tareaIndex = tareas.findIndex((tarea) => tarea.id.toString() === id);
+  
+  if (tareaIndex !== -1) {
+    const nuevaTarea = req.body.nombreTarea;
+    const descripcion = req.body.descripcionTarea;
+    tareas[tareaIndex].nombre = nuevaTarea;
+    tareas[tareaIndex].descripcion = descripcion;
+    res.render('tareas', { tareas: tareas });
+  } else {
+    res.status(404).send('Tarea no encontrada');
+  }
 });
 
 const port = 3000;
