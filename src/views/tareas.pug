@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Lista de tareas
+  body
+    h1 Lista de tareas
+    ul
+      each tarea in tareas
+        li
+          span Tarea ID: #{tarea.id}
+          br
+          span Nombre: #{tarea.nombre}
+          br
+          span Descripción: #{tarea.descripcion}
+          br
