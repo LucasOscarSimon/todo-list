@@ -1,15 +1,33 @@
 doctype html
 html
   head
-    title Lista de tareas
+    title Lista de Tareas
   body
-    h1 Lista de tareas
-    ul
-      each tarea in tareas
-        li
-          span Tarea ID: #{tarea.id}
-          br
-          span Nombre: #{tarea.nombre}
-          br
-          span Descripción: #{tarea.descripcion}
-          br
+    
+    h1 Lista de Tareas
+    
+    table
+      thead
+        tr
+          th Tarea ID
+          th Nombre
+          th Descripción
+          th Acciones
+      tbody
+        each tarea in tareas
+          tr
+            td #{tarea.id}
+            td #{tarea.nombre}
+            td #{tarea.descripcion}
+            td
+              form(action=`/tareas/borrar/${tarea.id}`, method="POST")
+                input(type="submit" value="Borrar")
+              form(action=`/tareas/actualizar/${tarea.id}`, method="POST")
+                input(type="text", name="nombreTarea", placeholder="Nuevo nombre")
+                input(type="text", name="descripcionTarea", placeholder="Nueva descripción")
+                input(type="submit" value="Editar")
+    
+    form(action="/tareas/agregar", method="POST")
+      input(type="text", name="nombreTarea", placeholder="Nombre de la tarea")
+      input(type="text", name="descripcionTarea", placeholder="Descripción de la tarea")
+      button(type="submit") Agregar tarea
