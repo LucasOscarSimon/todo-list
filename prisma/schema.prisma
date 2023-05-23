@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-ts"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://lucas:{GaleoN}11%23tXr@localhost:3306/todo_list"
+}
+
+model tarea {
+  id    Int     @id @default(autoincrement()) @unique
+  nombre  String
+  descripcion String  
+}
+
