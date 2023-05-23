@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = "mysql://lucas:{GaleoN}11%23tXr@localhost:3306/todo_list"
+  url      = env("DATABASE_URL")
 }
 
 model tarea {
