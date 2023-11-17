@@ -134,3 +134,4 @@ prisma/.env
 prisma/.env.*
 prisma/migrations/
 prisma/client/
+.vscode/launch.json
