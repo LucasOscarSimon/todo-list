@@ -7,7 +7,8 @@
     "start": "nodemon --exec ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prisma": "prisma",
-    "prisma:generate": "npx prisma generate"
+    "prisma:generate": "npx prisma generate",
+    "prisma:seed": "ts-node ./prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
