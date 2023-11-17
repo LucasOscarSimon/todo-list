@@ -8,8 +8,7 @@ datasource db {
 }
 
 model tarea {
-  id    Int     @id @default(autoincrement()) @unique
-  nombre  String
-  descripcion String  
+  id          Int    @id @unique @default(autoincrement())
+  nombre      String
+  descripcion String
 }
-
