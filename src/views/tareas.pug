@@ -23,11 +23,11 @@ html
               form(action=`/tareas/borrar/${tarea.id}`, method="POST")
                 input(type="submit" value="Borrar")
               form(action=`/tareas/actualizar/${tarea.id}`, method="POST")
-                input(type="text", name="nombreTarea", placeholder="Nuevo nombre")
-                input(type="text", name="descripcionTarea", placeholder="Nueva descripción")
+                input(type="text", name="nombreTarea", placeholder="Nuevo nombre", required)
+                input(type="text", name="descripcionTarea", placeholder="Nueva descripción", required, maxlength="50")
                 input(type="submit" value="Editar")
     
     form(action="/tareas/agregar", method="POST")
-      input(type="text", name="nombreTarea", placeholder="Nombre de la tarea")
-      input(type="text", name="descripcionTarea", placeholder="Descripción de la tarea")
+      input(type="text", name="nombreTarea", placeholder="Nombre de la tarea", required)
+      input(type="text", name="descripcionTarea", placeholder="Descripción de la tarea", required, maxlength="50")
       button(type="submit") Agregar tarea
