@@ -14,8 +14,8 @@ app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 const tareaSchema = Joi.object({
-  nombre: Joi.string().trim().required(),
-  descripcion: Joi.string().trim().max(50).required()
+  nombreTarea: Joi.string().trim().required(),
+  descripcionTarea: Joi.string().trim().max(50).required()
 });
 
 app.get('/tareas', async (req: Request, res: Response) => {
