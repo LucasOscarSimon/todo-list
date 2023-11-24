@@ -16,6 +16,7 @@ Este es un proyecto de una aplicación web de lista de tareas (ToDo List) desarr
 - Pug (motor de vistas)
 - HTML
 - CSS
+- Prisma
 
 ## Instalación
 
