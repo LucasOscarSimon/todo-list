@@ -1,35 +1,34 @@
 # ToDo List
 
-Este es un proyecto de una aplicación web de lista de tareas (ToDo List) desarrollada en Node.js con Express. La aplicación permite al usuario agregar, eliminar y actualizar tareas.
+This is a project for a web application of a ToDo List developed in Node.js with Express. The application allows the user to add, delete, and update tasks.
 
-## Características
+## Features
 
-- Agregar nuevas tareas con nombre y descripción.
-- Eliminar tareas existentes.
-- Actualizar el nombre y la descripción de las tareas.
-- Visualizar una lista de tareas en forma de tabla.
+- Add new tasks with name and description.
+- Delete existing tasks.
+- Update the name and description of tasks.
+- View a list of tasks in a table format.
 
-## Tecnologías utilizadas
+## Technologies Used
 
 - Node.js
 - Express
-- Pug (motor de vistas)
+- Pug (view engine)
 - HTML
 - CSS
 - Prisma
 
-## Instalación
+## Installation
 
-1. Clona este repositorio en tu máquina local.
-2. Ejecuta `npm install` para instalar las dependencias.
-3. Ejecuta `npm start` para iniciar la aplicación.
-4. Abre tu navegador y accede a `http://localhost:3000` para ver la aplicación en funcionamiento.
+1. Clone this repository to your local machine.
+2. Run `npm install` to install the dependencies.
+3. Run `npm start` to start the application.
+4. Open your browser and go to `http://localhost:3000` to see the application in action.
 
-## Contribución
+## Contribution
 
-¡Eres bienvenido/a a contribuir a este proyecto! Si encuentras algún error o tienes ideas para mejorar la aplicación, no dudes en abrir un "issue" o enviar una solicitud de extracción.
+You are welcome to contribute to this project! If you find any issues or have ideas to improve the application, feel free to open an issue or submit a pull request.
 
-## Licencia
+## License
 
-Este proyecto está bajo la Licencia MIT. Puedes consultar el archivo `LICENSE` para más detalles.
-
+This project is licensed under the MIT License. You can refer to the `LICENSE` file for more details.
