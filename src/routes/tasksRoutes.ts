@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import * as tareasController from '../controllers/tasksController';
+import * as tasksController from '../controllers/tasksController';
 
 const router = Router();
 
-router.get('/tasks', tareasController.listTasks);
-router.post('/tasks/add', tareasController.addTask);
-router.post('/tasks/delete/:id', tareasController.deleteTask);
-router.post('/tasks/update/:id', tareasController.updateTask);
+router.get('/tasks', tasksController.listTasks);
+router.post('/tasks/add', tasksController.addTask);
+router.post('/tasks/delete/:id', tasksController.deleteTask);
+router.post('/tasks/update/:id', tasksController.updateTask);
 
 export default router;

@@ -1,10 +1,10 @@
 import express, {  } from 'express';
 import path from 'path';
-import tareasRoutes from './routes/tasksRoutes';
+import tasksRoutes from './routes/tasksRoutes';
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', tareasRoutes);
+app.use('/api', tasksRoutes);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
