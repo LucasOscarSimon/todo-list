@@ -1,6 +1,6 @@
 import express, {  } from 'express';
 import path from 'path';
-import tareasRoutes from './routes/tareasRoutes';
+import tareasRoutes from './routes/tasksRoutes';
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 
 const port = 3000;
-// Iniciar el servidor
+// Initialize the app
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
 });
