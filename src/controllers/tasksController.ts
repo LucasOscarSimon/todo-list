@@ -40,7 +40,7 @@ export const addTask = async (req: Request, res: Response) => {
       });
   
         // Redirect or render as needed
-        res.redirect('/tasks');
+        res.redirect('/api/tasks');
     } catch (error) {
       if (error instanceof Joi.ValidationError) {
         // Handle validation errors

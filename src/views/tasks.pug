@@ -29,7 +29,7 @@ html
       }
       .dropdown-item {
         padding: 0px 5px !important;
-        font-size: 16px !important; /* Updated font size */
+        font-size: 16px !important;
       }
       .btn-primary {
         margin-top: 10px;
@@ -55,7 +55,7 @@ html
                       button.dropdown-item(type='button', onclick="location.href='/api/tasks/update/' + task.id") Edit
                     li
                       button.dropdown-item.text-danger(type='button', onclick="location.href='/api/tasks/delete/' + task.id") Delete
-          form(action='/api/tasks/agregar', method='POST') /* Updated form action */
+          form(action='/api/tasks/add', method='POST')
             .form-group
               label(for='taskName') Task Name
               input#taskName.form-control(type='text', name='taskName', required=true)
