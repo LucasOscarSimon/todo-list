@@ -1,14 +1,14 @@
-export default class Tarea {
+export default class Task {
 
     id: number | null;
-    nombre: string;
-    descripcion: string;
+    name: string;
+    description: string;
 
-    constructor(id: number | null, nombre: string, descripcion: string) {
+    constructor(id: number | null, name: string, description: string) {
 
         this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
+        this.name = name;
+        this.description = description;
         
     }
 }
